@@ -44,7 +44,9 @@ export default {
   methods: {
     getCoursework(){
       const { year } = this;
-      this.$store.dispatch('courseworkdata/getCoursework', { year });
+      if(this.$store.state.courseworkdata.coursework.length < 1){
+        this.$store.dispatch('courseworkdata/getCoursework', { year });
+      }
     }
   },
   created: function () {

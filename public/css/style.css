@@ -1,6 +1,10 @@
-body, html {
-  min-height:100%;
+html {
+  min-height: 100%;
+  display: flex;
+}
 
+body{
+  flex:1;
 }
 
 .flex-grow {

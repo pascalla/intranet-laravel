@@ -1808,9 +1808,12 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     getCoursework: function getCoursework() {
       var year = this.year;
-      this.$store.dispatch('courseworkdata/getCoursework', {
-        year: year
-      });
+
+      if (this.$store.state.courseworkdata.coursework.length < 1) {
+        this.$store.dispatch('courseworkdata/getCoursework', {
+          year: year
+        });
+      }
     }
   },
   created: function created() {
