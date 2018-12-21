@@ -27,13 +27,13 @@ export const courseworkdata = {
     },
     mutations: {
         courseworkRequest(state, coursework) {
-            state.courseworks = coursework;
+            state.coursework = coursework;
         },
         courseworkSuccess(state, coursework) {
-            state.courseworks = coursework;
+            state.coursework = coursework;
         },
         courseworkFailure(state) {
-            state.courseworks = null;
+            state.coursework = null;
         }
     }
 }

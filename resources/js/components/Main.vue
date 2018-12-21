@@ -29,9 +29,7 @@
           </div>
 
           <main class="bmd-layout-content pb-2">
-            <transition name="slide-fade" mode="out-in">
               <router-view></router-view>
-            </transition>
           </main>
         </div>
       </div>
