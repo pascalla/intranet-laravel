@@ -1,3 +1,4 @@
+import Coursework from './components/Coursework'
 import Dashboard from './components/Dashboard'
 import Login from './components/Login'
 
@@ -5,6 +6,7 @@ import VueRouter from 'vue-router';
 
 const routes = [
  { name:'Dashboard', path: '/', component: Dashboard, meta: { requiresAuth: true} },
+ { name:'Coursework', path: '/coursework', component: Coursework, meta: { requiresAuth: true} },
  { path: '/login', component: Login },
 ]
 

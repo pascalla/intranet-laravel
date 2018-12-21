@@ -20,3 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('login', 'AuthenticationController@login');
 Route::post('timetable/week', 'TimetableController@getWeek');
+Route::post('coursework/year', 'CourseworkController@getYear');

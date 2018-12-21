@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-lg-9">
         <div class="card mt-5">
-          <h5 class="card-header">Timetable <span class="pull-right text-muted">Last Updated 0/0/0 00:00</span></h5>
+          <div class="card-header"><h5>Timetable</h5> <span class="pull-right text-muted">Last Updated 0/0/0 00:00</span></div>
           <div class="card-body">
             <timetable-dashboard></timetable-dashboard>
 

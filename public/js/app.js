@@ -1754,6 +1754,69 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Coursework.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Coursework.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      year: "18/19",
+      coursework: []
+    };
+  },
+  methods: {
+    getCoursework: function getCoursework() {
+      var year = this.year;
+      this.$store.dispatch('courseworkdata/getCoursework', {
+        year: year
+      });
+      this.coursework = this.$store.state.courseworkdata.coursework;
+    }
+  },
+  created: function created() {
+    this.getCoursework();
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Dashboard.vue?vue&type=script&lang=js&":
 /*!********************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Dashboard.vue?vue&type=script&lang=js& ***!
@@ -1889,6 +1952,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
 //
 //
 //
@@ -36672,6 +36737,110 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Coursework.vue?vue&type=template&id=5f501857&":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Coursework.vue?vue&type=template&id=5f501857& ***!
+  \*************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container-fluid" }, [
+    _c("h1", { staticClass: "display-3 mt-3 mb-0" }, [
+      _vm._v("Upcoming Coursework")
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "row" },
+      _vm._l(_vm.coursework, function(cw) {
+        return _c(
+          "div",
+          { staticClass: "col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-3" },
+          [
+            _c("div", { staticClass: "card bg-light mt-5" }, [
+              _c("h5", { staticClass: "card-header" }, [
+                _vm._v(
+                  _vm._s(cw.module) +
+                    " - " +
+                    _vm._s(cw.title) +
+                    " (" +
+                    _vm._s(cw.lecturer) +
+                    ")"
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-body" }, [
+                _c("h6", { staticClass: "card-title" }, [
+                  _vm._v("Due on " + _vm._s(cw.deadline))
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "card-text" }, [
+                  _vm._v("Feedback by " + _vm._s(cw.feedback))
+                ])
+              ])
+            ])
+          ]
+        )
+      }),
+      0
+    ),
+    _vm._v(" "),
+    _c("h1", { staticClass: "display-3 mt-3 mb-0" }, [
+      _vm._v("Past Coursework")
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "row" },
+      _vm._l(_vm.coursework, function(cw) {
+        return _c(
+          "div",
+          { staticClass: "col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-3" },
+          [
+            _c("div", { staticClass: "card bg-light mt-5" }, [
+              _c("h5", { staticClass: "card-header" }, [
+                _vm._v(
+                  _vm._s(cw.module) +
+                    " - " +
+                    _vm._s(cw.title) +
+                    " (" +
+                    _vm._s(cw.lecturer) +
+                    ")"
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-body" }, [
+                _c("h6", { staticClass: "card-title" }, [
+                  _vm._v("Due on " + _vm._s(cw.deadline))
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "card-text" }, [
+                  _vm._v("Feedback by " + _vm._s(cw.feedback))
+                ])
+              ])
+            ])
+          ]
+        )
+      }),
+      0
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Dashboard.vue?vue&type=template&id=040e2ab9&":
 /*!************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Dashboard.vue?vue&type=template&id=040e2ab9& ***!
@@ -36719,8 +36888,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("h5", { staticClass: "card-header" }, [
-      _vm._v("Timetable "),
+    return _c("div", { staticClass: "card-header" }, [
+      _c("h5", [_vm._v("Timetable")]),
+      _vm._v(" "),
       _c("span", { staticClass: "pull-right text-muted" }, [
         _vm._v("Last Updated 0/0/0 00:00")
       ])
@@ -36968,12 +37138,67 @@ var render = function() {
               "bmd-layout-container bmd-drawer-f-l bmd-drawer-overlay"
           },
           [
-            _vm._m(1),
+            _c(
+              "div",
+              {
+                staticClass: "bmd-layout-drawer bg-faded",
+                attrs: { id: "appDrawer" }
+              },
+              [
+                _c("div", { staticClass: "container" }, [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c(
+                    "ul",
+                    { staticClass: "list-group" },
+                    [
+                      _c("router-link", { attrs: { to: "/" } }, [
+                        _c("a", { staticClass: "list-group-item" }, [
+                          _c("i", {
+                            staticClass: "fa fa-home",
+                            attrs: { "aria-hidden": "true" }
+                          }),
+                          _vm._v("Home")
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("router-link", { attrs: { to: "/" } }, [
+                        _c("a", { staticClass: "list-group-item" }, [
+                          _c("i", {
+                            staticClass: "fa fa-calendar",
+                            attrs: { "aria-hidden": "true" }
+                          }),
+                          _vm._v("Timetable")
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("router-link", { attrs: { to: "/coursework" } }, [
+                        _c("a", { staticClass: "list-group-item" }, [
+                          _c("i", {
+                            staticClass: "fa fa-book",
+                            attrs: { "aria-hidden": "true" }
+                          }),
+                          _vm._v("Coursework")
+                        ])
+                      ])
+                    ],
+                    1
+                  )
+                ])
+              ]
+            ),
             _vm._v(" "),
             _c(
               "main",
               { staticClass: "bmd-layout-content pb-2" },
-              [_c("router-view")],
+              [
+                _c(
+                  "transition",
+                  { attrs: { name: "slide-fade", mode: "out-in" } },
+                  [_c("router-view")],
+                  1
+                )
+              ],
               1
             )
           ]
@@ -37008,43 +37233,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "bmd-layout-drawer bg-faded", attrs: { id: "appDrawer" } },
-      [
-        _c("div", { staticClass: "container" }, [
-          _c("header", [
-            _c("a", { staticClass: "navbar-brand" }, [_vm._v("Intranet")])
-          ]),
-          _vm._v(" "),
-          _c("ul", { staticClass: "list-group" }, [
-            _c("a", { staticClass: "list-group-item", attrs: { href: "#" } }, [
-              _c("i", {
-                staticClass: "fa fa-home",
-                attrs: { "aria-hidden": "true" }
-              }),
-              _vm._v("Home")
-            ]),
-            _vm._v(" "),
-            _c("a", { staticClass: "list-group-item", attrs: { href: "#" } }, [
-              _c("i", {
-                staticClass: "fa fa-calendar",
-                attrs: { "aria-hidden": "true" }
-              }),
-              _vm._v("Timetable")
-            ]),
-            _vm._v(" "),
-            _c("a", { staticClass: "list-group-item", attrs: { href: "#" } }, [
-              _c("i", {
-                staticClass: "fa fa-book",
-                attrs: { "aria-hidden": "true" }
-              }),
-              _vm._v("Coursework")
-            ])
-          ])
-        ])
-      ]
-    )
+    return _c("header", [
+      _c("a", { staticClass: "navbar-brand" }, [_vm._v("Intranet")])
+    ])
   }
 ]
 render._withStripped = true
@@ -52221,6 +52412,58 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/js/_services/coursework.service.js":
+/*!******************************************************!*\
+  !*** ./resources/js/_services/coursework.service.js ***!
+  \******************************************************/
+/*! exports provided: courseworkService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "courseworkService", function() { return courseworkService; });
+/* harmony import */ var _store_courseworkdata_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_store/courseworkdata.module */ "./resources/js/_store/courseworkdata.module.js");
+
+var courseworkService = {
+  getCoursework: getCoursework
+};
+
+function getCoursework(year) {
+  var formData = new FormData();
+  var user = JSON.parse(localStorage.getItem('user'));
+  formData.append('api', user.token);
+  var requestOptions = {
+    method: 'POST',
+    body: formData
+  };
+  return fetch('/api/coursework/year', requestOptions) // Call the fetch function passing the url of the API as a parameter
+  .then(handleResponse).then(function (coursework) {
+    if (coursework.coursework) {
+      localStorage.setItem('coursework', JSON.stringify(coursework.coursework));
+    }
+
+    return coursework.coursework;
+  });
+}
+
+function handleResponse(response) {
+  return response.text().then(function (text) {
+    var data = text && JSON.parse(text);
+
+    if (!response.ok) {
+      if (response.status === 401) {//dispatch(logout);
+      }
+
+      var error = data.statusText;
+      return Promise.reject(error);
+    }
+
+    return data;
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/_services/user.service.js":
 /*!************************************************!*\
   !*** ./resources/js/_services/user.service.js ***!
@@ -52407,6 +52650,62 @@ var authentication = {
 
 /***/ }),
 
+/***/ "./resources/js/_store/courseworkdata.module.js":
+/*!******************************************************!*\
+  !*** ./resources/js/_store/courseworkdata.module.js ***!
+  \******************************************************/
+/*! exports provided: courseworkdata */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "courseworkdata", function() { return courseworkdata; });
+/* harmony import */ var _services_coursework_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_services/coursework.service */ "./resources/js/_services/coursework.service.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../routes */ "./resources/js/routes.js");
+
+
+var cw = JSON.parse(localStorage.getItem('coursework'));
+var initialState = cw ? {
+  coursework: cw
+} : {
+  coursework: []
+};
+var courseworkdata = {
+  namespaced: true,
+  state: initialState,
+  actions: {
+    getCoursework: function getCoursework(_ref, _ref2) {
+      var dispatch = _ref.dispatch,
+          commit = _ref.commit;
+      var year = _ref2.year;
+      commit('courseworkRequest', {
+        year: year
+      });
+      _services_coursework_service__WEBPACK_IMPORTED_MODULE_0__["courseworkService"].getCoursework(year).then(function (coursework) {
+        commit('courseworkSuccess', coursework);
+      }, function (error) {
+        commit('courseworkFailure', error);
+        dispatch('alert/error', error, {
+          root: true
+        });
+      });
+    }
+  },
+  mutations: {
+    courseworkRequest: function courseworkRequest(state, coursework) {
+      state.courseworks = coursework;
+    },
+    courseworkSuccess: function courseworkSuccess(state, coursework) {
+      state.courseworks = coursework;
+    },
+    courseworkFailure: function courseworkFailure(state) {
+      state.courseworks = null;
+    }
+  }
+};
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -52500,6 +52799,75 @@ if (token) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/components/Coursework.vue":
+/*!************************************************!*\
+  !*** ./resources/js/components/Coursework.vue ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Coursework_vue_vue_type_template_id_5f501857___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Coursework.vue?vue&type=template&id=5f501857& */ "./resources/js/components/Coursework.vue?vue&type=template&id=5f501857&");
+/* harmony import */ var _Coursework_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Coursework.vue?vue&type=script&lang=js& */ "./resources/js/components/Coursework.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Coursework_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Coursework_vue_vue_type_template_id_5f501857___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Coursework_vue_vue_type_template_id_5f501857___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Coursework.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Coursework.vue?vue&type=script&lang=js&":
+/*!*************************************************************************!*\
+  !*** ./resources/js/components/Coursework.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Coursework_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Coursework.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Coursework.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Coursework_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Coursework.vue?vue&type=template&id=5f501857&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/Coursework.vue?vue&type=template&id=5f501857& ***!
+  \*******************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Coursework_vue_vue_type_template_id_5f501857___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Coursework.vue?vue&type=template&id=5f501857& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Coursework.vue?vue&type=template&id=5f501857&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Coursework_vue_vue_type_template_id_5f501857___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Coursework_vue_vue_type_template_id_5f501857___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 
@@ -52789,24 +53157,33 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "router", function() { return router; });
-/* harmony import */ var _components_Dashboard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Dashboard */ "./resources/js/components/Dashboard.vue");
-/* harmony import */ var _components_Login__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Login */ "./resources/js/components/Login.vue");
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var _components_Coursework__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Coursework */ "./resources/js/components/Coursework.vue");
+/* harmony import */ var _components_Dashboard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Dashboard */ "./resources/js/components/Dashboard.vue");
+/* harmony import */ var _components_Login__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Login */ "./resources/js/components/Login.vue");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+
 
 
 
 var routes = [{
   name: 'Dashboard',
   path: '/',
-  component: _components_Dashboard__WEBPACK_IMPORTED_MODULE_0__["default"],
+  component: _components_Dashboard__WEBPACK_IMPORTED_MODULE_1__["default"],
+  meta: {
+    requiresAuth: true
+  }
+}, {
+  name: 'Coursework',
+  path: '/coursework',
+  component: _components_Coursework__WEBPACK_IMPORTED_MODULE_0__["default"],
   meta: {
     requiresAuth: true
   }
 }, {
   path: '/login',
-  component: _components_Login__WEBPACK_IMPORTED_MODULE_1__["default"]
+  component: _components_Login__WEBPACK_IMPORTED_MODULE_2__["default"]
 }];
-var router = new vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]({
+var router = new vue_router__WEBPACK_IMPORTED_MODULE_3__["default"]({
   mode: 'history',
   routes: routes // short for `routes: routes`
 
@@ -52838,12 +53215,15 @@ router.beforeEach(function (to, from, next) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _store_authentication_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_store/authentication.module */ "./resources/js/_store/authentication.module.js");
 /* harmony import */ var _store_alert_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_store/alert.module */ "./resources/js/_store/alert.module.js");
+/* harmony import */ var _store_courseworkdata_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_store/courseworkdata.module */ "./resources/js/_store/courseworkdata.module.js");
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   modules: {
     authentication: _store_authentication_module__WEBPACK_IMPORTED_MODULE_0__["authentication"],
-    alert: _store_alert_module__WEBPACK_IMPORTED_MODULE_1__["alert"]
+    alert: _store_alert_module__WEBPACK_IMPORTED_MODULE_1__["alert"],
+    courseworkdata: _store_courseworkdata_module__WEBPACK_IMPORTED_MODULE_2__["courseworkdata"]
   }
 });
 

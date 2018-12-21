@@ -21,15 +21,17 @@
                  <a class="navbar-brand">Intranet</a>
                </header>
                <ul class="list-group">
-                 <a href="#" class="list-group-item"><i class="fa fa-home" aria-hidden="true"></i>Home</a>
-                 <a href="#" class="list-group-item"><i class="fa fa-calendar" aria-hidden="true"></i>Timetable</a>
-                 <a href="#" class="list-group-item"><i class="fa fa-book" aria-hidden="true"></i>Coursework</a>
+                 <router-link to="/"><a class="list-group-item"><i class="fa fa-home" aria-hidden="true"></i>Home</a></router-link>
+                 <router-link to="/"><a class="list-group-item"><i class="fa fa-calendar" aria-hidden="true"></i>Timetable</a></router-link>
+                 <router-link to="/coursework"><a class="list-group-item"><i class="fa fa-book" aria-hidden="true"></i>Coursework</a></router-link>
                </ul>
              </div>
           </div>
 
           <main class="bmd-layout-content pb-2">
-            <router-view></router-view>
+            <transition name="slide-fade" mode="out-in">
+              <router-view></router-view>
+            </transition>
           </main>
         </div>
       </div>
