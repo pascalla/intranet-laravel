@@ -8,6 +8,7 @@ function getCoursework(year) {
     var formData = new FormData();
     const user = JSON.parse(localStorage.getItem('user'));
     formData.append('api', user.token);
+    formData.append('year', year);
 
     const requestOptions = {
         method: 'POST',
