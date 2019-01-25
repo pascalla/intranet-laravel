@@ -2015,6 +2015,11 @@ __webpack_require__.r(__webpack_exports__);
     user: function user() {
       return this.$store.state.authentication.user;
     }
+  },
+  methods: {
+    logout: function logout() {
+      this.$store.dispatch('authentication/logout');
+    }
   }
 });
 
@@ -37171,7 +37176,17 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _vm._m(1)
+          _c("li", { staticClass: "nav-item" }, [
+            _c(
+              "a",
+              {
+                staticClass: "nav-link",
+                attrs: { href: "#" },
+                on: { click: _vm.logout }
+              },
+              [_vm._v("Logout")]
+            )
+          ])
         ])
       ])
     ]),
@@ -37193,7 +37208,7 @@ var render = function() {
               },
               [
                 _c("div", { staticClass: "container" }, [
-                  _vm._m(2),
+                  _vm._m(1),
                   _vm._v(" "),
                   _c(
                     "ul",
@@ -37209,7 +37224,7 @@ var render = function() {
                         ])
                       ]),
                       _vm._v(" "),
-                      _vm._m(3),
+                      _vm._m(2),
                       _vm._v(" "),
                       _c("router-link", { attrs: { to: "/coursework" } }, [
                         _c("a", { staticClass: "list-group-item" }, [
@@ -37260,16 +37275,6 @@ var staticRenderFns = [
         _c("i", { staticClass: "material-icons" }, [_vm._v("menu")])
       ]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "nav-item" }, [
-      _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-        _vm._v("Logout")
-      ])
-    ])
   },
   function() {
     var _vm = this
@@ -52559,6 +52564,8 @@ function login(username, password) {
 function logout() {
   // remove user from local storage to log user out
   localStorage.removeItem('user');
+  localStorage.removeItem('coursework');
+  window.location = "/login";
 }
 
 function handleResponse(response) {
@@ -52643,7 +52650,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../routes */ "./resources/js/routes.js");
 
 
-var user = JSON.parse(localStorage.getItem('user'));
+var user = JSON.parse(localStorage.getItem('user')); //if(user.timestamp)
+
 var initialState = user ? {
   status: {
     loggedIn: true

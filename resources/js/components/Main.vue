@@ -11,7 +11,7 @@
              <a class="nav-link" href="#">{{ user.name }}</a>
            </li>
            <li class="nav-item">
-              <a class="nav-link" href="#">Logout</a>
+              <a class="nav-link" v-on:click="logout" href="#">Logout</a>
             </li>
         </ul>
       </div>
@@ -49,6 +49,11 @@ export default {
   computed: {
     user () {
       return this.$store.state.authentication.user
+    }
+  },
+  methods: {
+    logout: function(){
+      this.$store.dispatch('authentication/logout');
     }
   }
 }
