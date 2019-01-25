@@ -13,7 +13,9 @@ class Coursework extends Model
       $jar = new \GuzzleHttp\Cookie\CookieJar;
 
       // Setup collection
-      $courseworks = collect([]);
+      $courseworks = new Coursework;
+      $courseworks->current = collect();
+      $courseworks->past = collect();
 
       // Setup cookie jar
       $jar->setCookie(new \GuzzleHttp\Cookie\SetCookie([
@@ -39,8 +41,9 @@ class Coursework extends Model
         return null;
       }
 
-        $cws = $xs->findAll('//tr');
-        foreach ($cws as $cw) {
+        $pastcws = $xs->find('//table[@class="fullwidth courseworks past"]');
+        $pastcws = $pastcws->findAll('//tr');
+        foreach ($pastcws as $cw) {
           // skip if header
           $xs = Selector::loadHTML($cw->innerHtml());
           $cwExist = $xs->findOneOrNull('//td/span') !== null;
@@ -64,7 +67,7 @@ class Coursework extends Model
           $coursework->feedback = $feedback;
 
           // push it to colletion
-          $courseworks->push($coursework);
+          $courseworks->past->push($coursework);
         }
         return $courseworks;
     }

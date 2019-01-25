@@ -6,8 +6,13 @@
           <span class="sr-only">Toggle drawer</span>
           <i class="material-icons">menu</i>
         </button>
-        <ul class="nav navbar-nav">
-          <li class="nav-item">{{ user.name }}</li>
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+             <a class="nav-link" href="#">{{ user.name }}</a>
+           </li>
+           <li class="nav-item">
+              <a class="nav-link" href="#">Logout</a>
+            </li>
         </ul>
       </div>
     </header>
@@ -22,7 +27,7 @@
                </header>
                <ul class="list-group">
                  <router-link to="/"><a class="list-group-item"><i class="fa fa-home" aria-hidden="true"></i>Home</a></router-link>
-                 <router-link to="/"><a class="list-group-item"><i class="fa fa-calendar" aria-hidden="true"></i>Timetable</a></router-link>
+                 <li class="list-group-item"><i class="fa fa-calendar" aria-hidden="true"></i>Timetable</li>
                  <router-link to="/coursework"><a class="list-group-item"><i class="fa fa-book" aria-hidden="true"></i>Coursework</a></router-link>
                </ul>
              </div>
