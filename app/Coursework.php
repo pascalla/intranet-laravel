@@ -69,6 +69,7 @@ class Coursework extends Model
           // push it to colletion
           $courseworks->past->push($coursework);
         }
+        $courseworks->timestamp = now()->timestamp;
         return $courseworks;
     }
 }

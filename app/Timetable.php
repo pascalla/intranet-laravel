@@ -34,13 +34,26 @@ class Timetable extends Model
       ]));
 
       // make request with cookies
-      $res = $client->request('GET', 'https://science.swansea.ac.uk/intranet/attendance/timetable/2018/12/03?', [
+      $res = $client->request('GET', 'https://science.swansea.ac.uk/intranet/attendance/timetable/2019/02/04?', [
         'cookies' => $jar
       ]);
 
       //get response
       $body = $res->getBody();
       $xs = Selector::loadHTML($body);
+
+      $weekStarting = $xs->find('//*[@id="currentweekspan"]')->innerHtml();
+      $weekMonthYear =  explode(' ', $weekStarting);
+
+      $weekNames = array();
+      $weeks = $xs->findAll('//*[@id="timetable"]/thead/tr/th');
+      foreach($weeks as $week){
+        if($week->innerHtml() == ""){
+          continue;
+        }
+        $weekNames[] = $week->innerHtml() . " " . $weekMonthYear[1];
+      }
+
 
       // Parse the week into slots into an array
       $slots = $xs->findAll('//td');
@@ -54,6 +67,7 @@ class Timetable extends Model
           $day = $xs->find('//@data-day')->innerHtml();
           $location = $xs->find('//div[@class="lectureinfo room"]')->innerHtml();
           $module = $xs->find('//div/strong')->innerHtml();
+          //span
 
           //create slot with data
           $timetableSlot = new Slot;
@@ -67,6 +81,29 @@ class Timetable extends Model
         }
       }
 
-      return $timetable->sortBy('hour')->sortBy('day');
+      $timetable->sortBy('hour')->sortBy('day');
+
+      for($i = 0;$i <= 4;$i++){
+        for($k = 9; $k <= 17;$k++){
+          $weekTimetable[$i][$k] = array();
+        }
+      }
+
+      $teachingWeek = array();
+
+      for($i = 0;$i < 5;$i++){
+        $time = strtotime($weekStarting . " +" . $i . " day");
+        $date = date("D d M", $time);
+
+        $teachingWeek[] = $date;
+      }
+
+      foreach($timetable as $slot){
+        $weekTimetable[$slot->day][$slot->hour][] = $slot;
+      }
+
+      $data = array('week' => $teachingWeek, 'timetable' => $weekTimetable);
+
+      return $data;
     }
 }

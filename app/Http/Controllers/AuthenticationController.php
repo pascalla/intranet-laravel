@@ -67,6 +67,7 @@ class AuthenticationController extends Controller
           $user = new User;
           $user->name = $xs->find('//*[@id="logout"]/strong')->innerHtml();
           $user->token = substr($response->getHeader('set-cookie')[0], 10, 32);
+          $user->timestamp = now()->timestamp;
 
           return response()->json(["ok" => true, "status" => 200, "statusText" => "Successfully Logged In", "user" => $user]);
         } catch(NodeNotFoundException $e){
