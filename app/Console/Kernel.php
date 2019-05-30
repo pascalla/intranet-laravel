@@ -5,6 +5,8 @@ namespace App\Console;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
+use Storage;
+
 class Kernel extends ConsoleKernel
 {
     /**
@@ -24,8 +26,26 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+      $schedule->call(function () {
+        $notifications = collect(json_decode(Storage::get('notifications.json')));
+
+        foreach($notifications as $key => &$notification){
+          if($notification->timestamp < time()){
+            $recipients = array($notification->recipient);
+            fcm()
+              ->to($recipients) // $recipients must an array
+              ->data([
+                  'title' => $notification->title,
+                  'body' => $notification->body
+              ])
+              ->send();
+
+              $notifications->forget($key);
+          }
+        }
+
+        Storage::put('notifications.json', json_encode($notifications));
+      })->everyMinute();
     }
 
     /**

@@ -14,8 +14,3 @@
 Route::get('/login', function () {
     return view('layouts.login');
 });
-
-
-Route::get('/{any}', function () {
-    return view('layouts.master');
-})->where('any', '^((?!api).)*');

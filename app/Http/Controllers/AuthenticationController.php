@@ -25,7 +25,7 @@ class AuthenticationController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return response()->json(["status" => "error", "message" => "Please fill in all fields", "errors" => $validator->errors()], 401);
+            return response()->json(["status" => "error", "message" => "Please fill in all fields"], 200);
         }
 
         // Some checker variables
@@ -50,12 +50,12 @@ class AuthenticationController extends Controller
 
         // Make POST request using previus cookies
         $response = $client->request('POST', 'https://science.swansea.ac.uk/intranet/accounts/login/', [
-            'form_params' => [
-                'username' => $request->username,
-                'password' => $request->password,
-                'csrfmiddlewaretoken' => $csrf
-            ],
-            'cookies' => $jar
+          'form_params' => [
+              'username' => $request->username,
+              'password' => $request->password,
+              'csrfmiddlewaretoken' => $csrf
+          ],
+          'cookies' => $jar
         ]);
 
         // Check if logged in
@@ -70,7 +70,7 @@ class AuthenticationController extends Controller
 
           return response()->json(["ok" => true, "status" => 200, "statusText" => "Successfully Logged In", "user" => $user]);
         } catch(NodeNotFoundException $e){
-          return response()->json(["ok" => false, "status" => 401, "statusText" => "Incorrect Login Details"], 401);
+          return response()->json(["ok" => false, "status" => 200, "statusText" => "Incorrect Login Details"], 200);
         }
     }
 }

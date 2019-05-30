@@ -5,8 +5,7 @@
         <div class="card mt-5">
           <h5 class="card-header">Login</h5>
           <div class="card-body">
-            <img src="/img/logo.png" class="w-50 mx-auto d-block" alt="Swansea University">
-            <div v-if="alert.message" :class="`alert ${alert.type} mt-3`">{{alert.message}}</div>
+            <div v-if="alert.message" :class="`alert ${alert.type}`">{{alert.message}}</div>
             <form @submit.prevent="handleLogin">
               <div class="form-group">
                 <label for="username" class="bmd-label-floating">Student Number</label>

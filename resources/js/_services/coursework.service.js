@@ -18,7 +18,6 @@ function getCoursework(year) {
     return fetch('/api/coursework/year', requestOptions) // Call the fetch function passing the url of the API as a parameter
     .then(handleResponse)
     .then(coursework => {
-        console.log(coursework);
         if (coursework.coursework) {
             localStorage.setItem('coursework', JSON.stringify(coursework.coursework));
         }

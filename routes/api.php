@@ -19,5 +19,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::post('login', 'AuthenticationController@login');
+Route::post('dashboard', 'DashboardController@index');
 Route::post('timetable/week', 'TimetableController@getWeek');
 Route::post('coursework/year', 'CourseworkController@getYear');
+Route::post('directory', 'OfficeHoursController@index');
+
+Route::get('testnotify', 'DashboardController@notify');
+Route::post('notify', 'NotificationController@notify');

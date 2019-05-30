@@ -1920,7 +1920,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2005,20 +2004,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   computed: {
     user: function user() {
       return this.$store.state.authentication.user;
-    }
-  },
-  methods: {
-    logout: function logout() {
-      this.$store.dispatch('authentication/logout');
     }
   }
 });
@@ -36773,109 +36762,100 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container-fluid" }, [
-    _c("h1", { staticClass: "display-3 mt-3 mb-0" }, [
-      _vm._v("Upcoming Coursework")
-    ]),
-    _vm._v(" "),
-    _vm.coursework.current.length > 0
-      ? _c(
-          "div",
-          { staticClass: "row" },
-          _vm._l(_vm.coursework, function(cw) {
-            return _c(
-              "div",
-              { staticClass: "col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-3" },
-              [
-                _c("div", { staticClass: "card bg-light mt-5" }, [
-                  _c("h5", { staticClass: "card-header" }, [
-                    _vm._v(
-                      _vm._s(cw.module) +
-                        " - " +
-                        _vm._s(cw.title) +
-                        " (" +
-                        _vm._s(cw.lecturer) +
-                        ")"
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "card-body" }, [
-                    _c("h6", { staticClass: "card-title" }, [
-                      _vm._v("Due on " + _vm._s(cw.deadline))
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "card-text" }, [
-                      _vm._v("Feedback by " + _vm._s(cw.feedback))
-                    ])
-                  ])
-                ])
-              ]
-            )
-          }),
-          0
-        )
+    _vm.coursework.length < 1
+      ? _c("div", [_vm._v("\n    Loading...\n  ")])
       : _vm._e(),
     _vm._v(" "),
-    _c("h1", { staticClass: "display-3 mt-3 mb-0" }, [
-      _vm._v("Past Coursework")
-    ]),
-    _vm._v(" "),
-    _vm.coursework.past.length > 0
-      ? _c(
-          "div",
-          { staticClass: "row" },
-          _vm._l(_vm.coursework.past, function(cw) {
-            return _c(
-              "div",
-              { staticClass: "col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-3" },
-              [
-                _c("div", { staticClass: "card bg-light mt-5" }, [
-                  _c("h5", { staticClass: "card-header" }, [
-                    _vm._v(
-                      _vm._s(cw.module) +
-                        " - " +
-                        _vm._s(cw.title) +
-                        " (" +
-                        _vm._s(cw.lecturer) +
-                        ")"
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "card-body" }, [
-                    _c("h6", { staticClass: "card-title" }, [
-                      _vm._v("Due on " + _vm._s(cw.deadline))
+    _vm.coursework.length > 0
+      ? _c("div", [
+          _c("h1", { staticClass: "display-3 mt-3 mb-0" }, [
+            _vm._v("Upcoming Coursework")
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "row" },
+            _vm._l(_vm.coursework, function(cw) {
+              return _c(
+                "div",
+                {
+                  staticClass: "col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-3"
+                },
+                [
+                  _c("div", { staticClass: "card bg-light mt-5" }, [
+                    _c("h5", { staticClass: "card-header" }, [
+                      _vm._v(
+                        _vm._s(cw.module) +
+                          " - " +
+                          _vm._s(cw.title) +
+                          " (" +
+                          _vm._s(cw.lecturer) +
+                          ")"
+                      )
                     ]),
                     _vm._v(" "),
-                    _c("p", { staticClass: "card-text" }, [
-                      _vm._v("Feedback by " + _vm._s(cw.feedback))
-                    ]),
-                    _vm._v(" "),
-                    _vm._m(0, true)
+                    _c("div", { staticClass: "card-body" }, [
+                      _c("h6", { staticClass: "card-title" }, [
+                        _vm._v("Due on " + _vm._s(cw.deadline))
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "card-text" }, [
+                        _vm._v("Feedback by " + _vm._s(cw.feedback))
+                      ])
+                    ])
                   ])
-                ])
-              ]
-            )
-          }),
-          0
-        )
+                ]
+              )
+            }),
+            0
+          ),
+          _vm._v(" "),
+          _c("h1", { staticClass: "display-3 mt-3 mb-0" }, [
+            _vm._v("Past Coursework")
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "row" },
+            _vm._l(_vm.coursework, function(cw) {
+              return _c(
+                "div",
+                {
+                  staticClass: "col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-3"
+                },
+                [
+                  _c("div", { staticClass: "card bg-light mt-5" }, [
+                    _c("h5", { staticClass: "card-header" }, [
+                      _vm._v(
+                        _vm._s(cw.module) +
+                          " - " +
+                          _vm._s(cw.title) +
+                          " (" +
+                          _vm._s(cw.lecturer) +
+                          ")"
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card-body" }, [
+                      _c("h6", { staticClass: "card-title" }, [
+                        _vm._v("Due on " + _vm._s(cw.deadline))
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "card-text" }, [
+                        _vm._v("Feedback by " + _vm._s(cw.feedback))
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            }),
+            0
+          )
+        ])
       : _vm._e()
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "text-right" }, [
-      _c("a", { staticClass: "btn btn-primary", attrs: { href: "#" } }, [
-        _c("i", {
-          staticClass: "fa fa-bell-o",
-          attrs: { "aria-hidden": "true" }
-        }),
-        _vm._v(" Remind Me")
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -36998,13 +36978,8 @@ var render = function() {
           _c("h5", { staticClass: "card-header" }, [_vm._v("Login")]),
           _vm._v(" "),
           _c("div", { staticClass: "card-body" }, [
-            _c("img", {
-              staticClass: "w-50 mx-auto d-block",
-              attrs: { src: "/img/logo.png", alt: "Swansea University" }
-            }),
-            _vm._v(" "),
             _vm.alert.message
-              ? _c("div", { class: "alert " + _vm.alert.type + " mt-3" }, [
+              ? _c("div", { class: "alert " + _vm.alert.type }, [
                   _vm._v(_vm._s(_vm.alert.message))
                 ])
               : _vm._e(),
@@ -37169,24 +37144,8 @@ var render = function() {
       _c("div", { staticClass: "navbar navbar-light bg-faded" }, [
         _vm._m(0),
         _vm._v(" "),
-        _c("ul", { staticClass: "nav nav-tabs" }, [
-          _c("li", { staticClass: "nav-item" }, [
-            _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-              _vm._v(_vm._s(_vm.user.name))
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "nav-item" }, [
-            _c(
-              "a",
-              {
-                staticClass: "nav-link",
-                attrs: { href: "#" },
-                on: { click: _vm.logout }
-              },
-              [_vm._v("Logout")]
-            )
-          ])
+        _c("ul", { staticClass: "nav navbar-nav" }, [
+          _c("li", { staticClass: "nav-item" }, [_vm._v(_vm._s(_vm.user.name))])
         ])
       ])
     ]),
@@ -37224,7 +37183,15 @@ var render = function() {
                         ])
                       ]),
                       _vm._v(" "),
-                      _vm._m(2),
+                      _c("router-link", { attrs: { to: "/" } }, [
+                        _c("a", { staticClass: "list-group-item" }, [
+                          _c("i", {
+                            staticClass: "fa fa-calendar",
+                            attrs: { "aria-hidden": "true" }
+                          }),
+                          _vm._v("Timetable")
+                        ])
+                      ]),
                       _vm._v(" "),
                       _c("router-link", { attrs: { to: "/coursework" } }, [
                         _c("a", { staticClass: "list-group-item" }, [
@@ -37282,18 +37249,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("header", [
       _c("a", { staticClass: "navbar-brand" }, [_vm._v("Intranet")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "list-group-item" }, [
-      _c("i", {
-        staticClass: "fa fa-calendar",
-        attrs: { "aria-hidden": "true" }
-      }),
-      _vm._v("Timetable")
     ])
   }
 ]
@@ -52498,8 +52453,6 @@ function getCoursework(year) {
   };
   return fetch('/api/coursework/year', requestOptions) // Call the fetch function passing the url of the API as a parameter
   .then(handleResponse).then(function (coursework) {
-    console.log(coursework);
-
     if (coursework.coursework) {
       localStorage.setItem('coursework', JSON.stringify(coursework.coursework));
     }
@@ -52564,8 +52517,6 @@ function login(username, password) {
 function logout() {
   // remove user from local storage to log user out
   localStorage.removeItem('user');
-  localStorage.removeItem('coursework');
-  window.location = "/login";
 }
 
 function handleResponse(response) {
@@ -52650,8 +52601,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../routes */ "./resources/js/routes.js");
 
 
-var user = JSON.parse(localStorage.getItem('user')); //if(user.timestamp)
-
+var user = JSON.parse(localStorage.getItem('user'));
 var initialState = user ? {
   status: {
     loggedIn: true
@@ -53312,8 +53262,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! R:\Dolores\Documents\GitHub\intranet-laravel\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! R:\Dolores\Documents\GitHub\intranet-laravel\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Josh\Documents\GitHub\intranet-laravel\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Josh\Documents\GitHub\intranet-laravel\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
