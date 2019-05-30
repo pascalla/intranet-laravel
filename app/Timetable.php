@@ -48,6 +48,19 @@ class Timetable extends Model
       $body = $res->getBody();
       $xs = Selector::loadHTML($body);
 
+      $weekStarting = $xs->find('//*[@id="currentweekspan"]')->innerHtml();
+      $weekMonthYear =  explode(' ', $weekStarting);
+
+      $weekNames = array();
+      $weeks = $xs->findAll('//*[@id="timetable"]/thead/tr/th');
+      foreach($weeks as $week){
+        if($week->innerHtml() == ""){
+          continue;
+        }
+        $weekNames[] = $week->innerHtml() . " " . $weekMonthYear[1];
+      }
+
+
       // Parse the week into slots into an array
       $slots = $xs->findAll('//td');
       foreach ($slots as $slot) {

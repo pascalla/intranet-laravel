@@ -2,6 +2,9 @@ import { userService } from '../_services/user.service';
 import { router } from '../routes';
 
 const user = JSON.parse(localStorage.getItem('user'));
+
+//if(user.timestamp)
+
 const initialState = user
     ? { status: { loggedIn: true }, user }
     : { status: {}, user: null };
