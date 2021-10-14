@@ -1,1 +1,1 @@
-Univeristy Project
+University Project
